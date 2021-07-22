@@ -1,0 +1,423 @@
+// Font
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap");
+
+// Variables
+$backgroundColor: #fff;
+$primaryColor : #6A66BA;
+$secondColor: #E9E7F6;
+$textColor : #000;
+
+// mixin
+@mixin btn($fontWeight : 400, $size : 0 1em, $borderSize : 1px){
+    display: inline-block;
+    color: $primaryColor;
+    font-weight: $fontWeight;
+    padding: $size;
+    border: $borderSize solid $primaryColor;
+    border-radius: 2em;
+    text-decoration: none;
+    transition: all 0.3s ease;
+
+    &:hover{
+        color: $secondColor;
+        background-color: $primaryColor;
+    }
+}
+
+@mixin title{
+    text-align: center;
+    font-size: 3em;
+    font-weight: 500;
+    color: $textColor;
+    text-transform: capitalize;
+    @media screen and (max-width: 992px) {
+        font-size: 2em;
+    }
+}
+
+@mixin subtitle{
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 100;
+    color: $textColor;
+    text-transform: capitalize;
+    @media screen and (max-width: 992px) {
+        font-size: 1em;
+    }
+}
+
+@mixin icon{
+    font-size: 3em;
+    color: $primaryColor;
+    margin-bottom: 0.5em;
+}
+// styling
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Montserrat';
+    &::before{
+        content: "";
+        background-image: url(../aset/header.png);
+        background-size: 70vmax;
+        background-repeat: no-repeat;
+        background-position: top right;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        @media screen and (max-width: 992px) {
+            opacity: 0.2;
+            background-size: 80vmax;
+        }
+    }
+}
+
+.custom-nav{
+    .navbar-brand{
+        @include btn(700, 0 1em, 3px );
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        font-size: 1em;
+
+        &:hover{
+            background-color: $primaryColor;
+            color: $secondColor;
+        }
+    }
+    #navbarNav{
+        .navbar-nav{
+            .nav-item{
+                .nav-link{
+                    color: $primaryColor;
+                    margin-left: 2em;
+                    text-transform: uppercase;
+                    font-weight: 500;
+                    transition: all 0.3s ease;
+                    
+                    &:hover{
+                        color: $secondColor;
+                        &.active{
+                            border-bottom: 1px solid $primaryColor;
+                        }
+                    }
+                    @media screen and (max-width: 992px) {
+                        background-color: $primaryColor;
+                        color: $secondColor;
+                        padding: 1em 1em;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 992px) {
+        margin-top: 1em;
+    }
+}
+
+.custom-header{
+    margin-top: 8em;
+    h2{
+        font-weight: 700;
+        color: $primaryColor;
+        text-transform: uppercase;
+        font-size: 3em;
+        white-space: nowrap;
+        border-bottom: 3px solid $primaryColor;
+        letter-spacing: 3px;
+    }
+    h3{
+        margin-top: 0.5em;
+        font-weight: 500;
+        font-size: 2em;
+        line-height: 1;
+        color: $primaryColor;
+    }
+    p{
+        margin-top: 1.5em;
+        font-weight: 400;
+        font-size: 1em;
+        line-height: 1;
+        color: lighten($textColor, 40%);
+    }
+    a{
+        @include btn(400, 0 1em);
+        margin-top: 0.5em;
+    }
+    @media screen and(max-width: 992px) {
+        margin-top: 3em;
+        text-align: center;
+
+        h1,h2,h3,a{
+            text-shadow: 1px 1px 1px rgba($primaryColor, $alpha: 0.4);
+        }
+        h3{
+            color: lighten($primaryColor, 10%);
+        }
+    }
+}
+
+.top-content{
+    margin-top: 15em;
+    .row{
+        .col-12{
+            &.col-lg-6{
+                img{
+                    width: 40vmax;
+                    border: 1px solid $backgroundColor;
+                    box-shadow: 2px 5px 5px 2px black;
+                    border-radius: 2em;
+                }
+                &.caption{
+                    justify-content: center;
+                    padding: 0 2em;
+                    h2{
+                        font-size: 3em;
+                        color: $textColor;
+                        font-weight: 500;
+                    }
+                    p{
+                        font-size: 1em;
+                        font-weight: 400;
+                        color: $textColor;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+            @media screen and (max-width: 992px) {
+                &.col-lg-6{
+                    display: flex;
+                    justify-content: center;
+                    img{
+                        width: 50vmax;
+                        border: none;
+                        border-radius: 0%;
+                        margin-bottom: 3em;
+                    }
+                    &.caption{
+                        display: block;
+                        h2{
+                            font-size: 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 992px) {
+        margin-top: 10em;
+    }
+}
+
+.features{
+    margin-top: 15em;
+    h1{
+        @include title();
+    }
+    p{
+        @include subtitle();
+    }
+    .main-features{
+        margin-top: 2em;
+        .row{
+            margin-top: 2em;
+            .col-md{
+                margin: 1em;
+                border: 0px solid $secondColor;
+                padding: 1em;
+                border-radius: 1em;
+                box-shadow: 5px 10px 10px black ;
+                img{
+                    max-width: 5vmax;
+                }
+                h3{
+                    margin-top: 1em;
+                    font-size: 1.5em;
+                    font-weight: 500;
+                }
+                p{
+                    font-size: 1em;
+                    font-weight: 400;
+                    text-align: start;
+                }
+                @media screen and (max-width: 992px) {
+                    img{
+                        max-width: 10vmax;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 992px) {
+        margin-top: 8em;
+        .title{
+            font-size: 2em;
+        }
+        .sub-title{
+            font-size: 1em;
+        }
+    }
+}
+.pricing{
+    margin-top: 15em;
+    h1{
+        @include title();
+        letter-spacing: 3px;
+    }
+    .row{
+        margin-top: 2em;
+        .col{
+            border: 0px solid black;
+            border-radius: 1em;
+            box-shadow: 2px 4px 10px black;
+            margin: 1em;
+            padding: 1em;
+            h2{
+                font-size: 2em;
+                font-weight: 500;
+            }
+            h5{
+                font-size: 1.5em;
+                font-weight: 400;
+                margin-top: 1em;
+            }
+            h4{
+                font-size: 1.8em;
+                color: $primaryColor;
+                font-weight: 700;
+            }
+            p{
+                margin-top: 1em;
+                font-size: 1em;
+                font-weight: 400;
+                color: lighten($textColor, 50%);
+            }
+            ul{
+                line-height: 2em;
+                list-style: none;
+                li{
+                    img{
+                        max-width: 1vmax;
+                    }
+                }
+            }
+            a{
+                @include btn(500, 1em, 2px);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            @media screen and (max-width: 992px) {
+                h2{
+                    text-align: center;
+                }
+                h4{
+                    font-size: 1.5em;
+                }
+            }
+        }
+    }
+}
+
+.faq{
+    margin-top: 10em;
+    h1{
+        @include title();
+    }
+    #accordion{
+        margin-top: 3em;
+        .card{
+            margin-top: 1em;
+            button{
+                color: $textColor;
+                text-decoration: none;
+                text-align: start;
+                white-space: inherit;
+                font-weight: 500;
+                transition: all 0.3s ease;
+                &:hover{
+                    color: $primaryColor;
+                }
+            }
+            &-body{
+                text-indent: 1em;
+            }
+        }
+    }
+}
+
+.bottom{
+    padding: 10em 0 10em 0;
+    color: $backgroundColor;
+    margin-top: 10em;
+    text-align: center;
+    background-color: $primaryColor;
+    max-width: 100vmax;
+    h1{
+        @include title();
+        color: $backgroundColor;
+        font-weight: 700;
+        margin-bottom: 0.5em
+    }
+    p{
+        @include subtitle();
+        color: $backgroundColor;
+        padding: 0 5em;
+        font-weight: 400;
+        margin-bottom: 2em;
+    }
+    a{
+        text-decoration: none;
+        color: $backgroundColor;
+        font-size:  1em;
+        font-weight: 500;
+        border: 3px solid $backgroundColor;
+        border-radius: 3em;
+        padding: 1em;
+        transition: all 0.3s ease;
+
+        &:hover{
+            background-color: $backgroundColor;
+            color: $primaryColor;
+        }
+    }
+}
+footer{
+    padding: 5em 5em 0 5em;
+    background-color: $textColor;
+    max-width: 100vmax;
+    color: $backgroundColor;
+    .row.main-footer{
+        .col{
+            ul{
+                h1{
+                    font-weight: 500;
+                }
+                li{
+                    list-style: none;
+                }
+            }
+        }
+    }
+    .row.copyright{
+        p{
+            margin-top: 2em;
+            font-size: 1em;
+            font-weight: 500;
+        }
+    }
+    @media screen and (max-width: 992px) {
+        .row.copyright{
+            p{
+                text-align: center;
+                font-size: 0.5rem;                
+            }
+        }
+    }
+}

@@ -479,6 +479,12 @@ body::before {
   }
 }
 
+@media screen and (max-width: 992px) {
+  .bottom p {
+    padding: 0 2em;
+  }
+}
+
 .bottom a {
   text-decoration: none;
   color: #fff;
@@ -498,7 +504,7 @@ body::before {
 
 footer {
   padding: 5em 5em 0 5em;
-  background-color: #000;
+  background-color: #333333;
   max-width: 100vmax;
   color: #fff;
 }
@@ -509,6 +515,29 @@ footer .row.main-footer .col ul h1 {
 
 footer .row.main-footer .col ul li {
   list-style: none;
+  line-height: 1.5;
+}
+
+footer .row.main-footer .col ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer .row.main-footer .col ul li a:hover {
+  color: #6A66BA;
+}
+
+footer .row.main-footer .col.social ul li {
+  float: left;
+  margin-right: 2em;
+}
+
+footer .row.main-footer .col.social ul li a img {
+  max-width: 3vmax;
+}
+
+footer .row.main-footer .col.social ul li a img:hover {
+  opacity: 0.5;
 }
 
 footer .row.copyright p {
@@ -517,7 +546,22 @@ footer .row.copyright p {
   font-weight: 500;
 }
 
+footer .row.copyright a {
+  text-decoration: none;
+  color: #fff;
+}
+
+footer .row.copyright a:hover {
+  color: #6A66BA;
+}
+
 @media screen and (max-width: 992px) {
+  footer .row.main-footer .col.social ul li {
+    margin-right: 1em;
+  }
+  footer .row.main-footer .col.social ul li a img {
+    max-width: 1.5em;
+  }
   footer .row.copyright p {
     text-align: center;
     font-size: 0.5rem;

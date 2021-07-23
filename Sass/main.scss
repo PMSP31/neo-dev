@@ -371,6 +371,12 @@ body{
         padding: 0 5em;
         font-weight: 400;
         margin-bottom: 2em;
+
+        @media screen and (max-width: 992px) {
+            &{
+                padding: 0 2em;
+            }
+        }
     }
     a{
         text-decoration: none;
@@ -390,7 +396,7 @@ body{
 }
 footer{
     padding: 5em 5em 0 5em;
-    background-color: $textColor;
+    background-color: lighten($textColor, 20%);
     max-width: 100vmax;
     color: $backgroundColor;
     .row.main-footer{
@@ -401,6 +407,32 @@ footer{
                 }
                 li{
                     list-style: none;
+                    line-height: 1.5;
+                    a{
+                        text-decoration: none;
+                        color: $backgroundColor;
+
+                        &:hover{
+                            color: $primaryColor;
+                        }
+                    }
+                }
+            }
+            &.social{
+                ul{
+                    li{
+                        float: left;
+                        margin-right: 2em;
+                        a{
+                            img{
+                                max-width: 3vmax;
+
+                                &:hover{
+                                    opacity: 0.5;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -411,8 +443,30 @@ footer{
             font-size: 1em;
             font-weight: 500;
         }
+        a{
+            text-decoration: none;
+            color: $backgroundColor;
+
+            &:hover{
+                color:$primaryColor;
+            }
+        }
     }
     @media screen and (max-width: 992px) {
+        .row.main-footer{
+            .col.social{
+                ul{
+                    li{
+                        margin-right: 1em;
+                        a{
+                            img{
+                                max-width: 1.5em;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         .row.copyright{
             p{
                 text-align: center;

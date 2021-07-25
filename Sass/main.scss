@@ -99,16 +99,12 @@ body{
             .nav-item{
                 .nav-link{
                     color: $primaryColor;
-                    margin-left: 2em;
                     text-transform: uppercase;
                     font-weight: 500;
                     transition: all 0.3s ease;
                     
                     &:hover{
                         color: $secondColor;
-                        &.active{
-                            border-bottom: 1px solid $primaryColor;
-                        }
                     }
                     @media screen and (max-width: 992px) {
                         background-color: $primaryColor;

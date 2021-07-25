@@ -61,7 +61,6 @@ body::before {
 
 .custom-nav #navbarNav .navbar-nav .nav-item .nav-link {
   color: #6A66BA;
-  margin-left: 2em;
   text-transform: uppercase;
   font-weight: 500;
   -webkit-transition: all 0.3s ease;
@@ -70,10 +69,6 @@ body::before {
 
 .custom-nav #navbarNav .navbar-nav .nav-item .nav-link:hover {
   color: #E9E7F6;
-}
-
-.custom-nav #navbarNav .navbar-nav .nav-item .nav-link:hover.active {
-  border-bottom: 1px solid #6A66BA;
 }
 
 @media screen and (max-width: 992px) {

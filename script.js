@@ -8,8 +8,13 @@ productCard.forEach((product, i) =>{
 })
 
 featuresCard.forEach((fCard , i) =>{
-  fCard.dataset.aos = "fade-up";
+  if(i % 2 == 0){
+    fCard.dataset.aos = "fade-up";
+    fCard.dataset.aosDelay = i * 300;
+  }else{
+    fCard.dataset.aos = "fade-down";
   fCard.dataset.aosDelay = i * 300;
+  }
 })
 AOS.init({
   once : true,
